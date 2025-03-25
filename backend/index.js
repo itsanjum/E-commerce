@@ -35,6 +35,7 @@ const storage =multer.diskStorage({
 const upload=multer({storage:storage})
 
 
+
 //Creating upload Endpoint for images
 app.use('/images',express.static('upload/images'))
 app.post("/upload",upload.single('product'),(req,res)=>{
@@ -44,7 +45,6 @@ app.post("/upload",upload.single('product'),(req,res)=>{
 
     })
 })
-
 app.listen(port,(error)=>{
     if(!error){
         console.log("Server running on Port " +port)
